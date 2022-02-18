@@ -73,8 +73,9 @@ describe('SunmiyaNFT', function () {
     await sunmiyaNFT.unpause();
 
     expect(
-      await sunmiyaNFT.connect(userA).transferFrom(userA.address, userB.address, 1)
+      await sunmiyaNFT
+        .connect(userA)
+        .transferFrom(userA.address, userB.address, 1)
     ).to.not.throw;
   });
-
 });
