@@ -13,6 +13,6 @@ module.exports = async function (deployer) {
   fs.mkdirpSync(deployPath);
   fs.writeFileSync(path.resolve(deployPath, filename), JSON.stringify({
     address: SunmiyaNFT.address,
-    abi: SunmiyaNFT._json.abi
+    abi: SunmiyaNFT.abi
   }), 'utf8');
 };
