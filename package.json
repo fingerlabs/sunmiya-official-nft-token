@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "hardhat test",
-    "deploy:toshinet": "truffle deploy --network development --reset"
+    "deploy:toshinet": "truffle deploy --network toshinet --reset",
+    "deploy:baobab": "truffle deploy --network baobab --reset"
   },
   "author": "",
   "license": "ISC",
