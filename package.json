@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "hardhat test",
-    "deploy:test": "truffle deploy --network development --reset"
+    "deploy:toshinet": "truffle deploy --network development --reset"
   },
   "author": "",
   "license": "ISC",
@@ -42,5 +42,8 @@
     "ts-node": "^10.5.0",
     "typechain": "^5.2.0",
     "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "fs-extra": "^10.0.0"
   }
 }
