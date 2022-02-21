@@ -19,15 +19,18 @@ module.exports = {
           'https://api.baobab.klaytn.net:8651'
         );
       },
-      network_id: '1001', //Klaytn baobab testnet's network id
+      network_id: '1001', // Klaytn baobab testnet's network id
       gas: '8500000',
       gasPrice: null,
     },
-    cypress: {
+    mainnet: {
       provider: () => {
-        return new HDWalletProvider(privateKey, 'http://your.cypress.en:8551');
+        return new HDWalletProvider(
+          privateKey,
+          'https://klaytn-en.sixnetwork.io:8651'
+        );
       },
-      network_id: '8217', //Klaytn mainnet's network id
+      network_id: '8217', // Klaytn mainnet's network id
       gas: '8500000',
       gasPrice: null,
     },

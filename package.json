@@ -6,7 +6,8 @@
   "scripts": {
     "test": "hardhat test",
     "deploy:toshinet": "truffle deploy --network toshinet --reset",
-    "deploy:baobab": "truffle deploy --network baobab --reset"
+    "deploy:baobab": "truffle deploy --network baobab --reset",
+    "deploy:mainnet": "truffle deploy --network mainnet --reset"
   },
   "author": "",
   "license": "ISC",
