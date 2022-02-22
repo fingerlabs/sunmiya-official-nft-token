@@ -23,10 +23,8 @@ module.exports = {
       gas: '8500000',
       gasPrice: null,
     },
-    cypress: {
-      provider: () => {
-        return new HDWalletProvider(privateKey, 'http://your.cypress.en:8551');
-      },
+    mainnet: {
+      provider: () => { return new HDWalletProvider(privateKey, "https://klaytn-en.sixnetwork.io:8651") },
       network_id: '8217', //Klaytn mainnet's network id
       gas: '8500000',
       gasPrice: null,
