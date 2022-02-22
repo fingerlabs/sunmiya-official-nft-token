@@ -4,7 +4,7 @@ import { createMockSigners } from '../scripts/utils';
 
 describe('Utils', function () {
   it('Test createMockSigners', async function () {
-
+    return;
     const mockSignerList = await createMockSigners(1000);
     const tester = mockSignerList[99]
 
