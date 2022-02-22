@@ -7,11 +7,12 @@ describe('SunmiyaNFT', function () {
   let owner: SignerWithAddress;
   let userA: SignerWithAddress;
   let userB: SignerWithAddress;
+  let userC: SignerWithAddress;
 
   let sunmiyaNFT: SunmiyaNFT;
 
   beforeEach(async function () {
-    [owner, userA, userB] = await ethers.getSigners();
+    [owner, userA, userB, userC] = await ethers.getSigners();
     const SunmiyaNFT = await ethers.getContractFactory('SunmiyaNFT');
     sunmiyaNFT = await SunmiyaNFT.deploy('Sunmiya', 'MIYA');
     await sunmiyaNFT.deployed();
@@ -44,11 +45,13 @@ describe('SunmiyaNFT', function () {
   it('민팅권한을 다른 계정에 추가하여 민팅 할 수 있다', async function () {
     await sunmiyaNFT.addMinter(userA.address);
 
+    // owner로 민팅
+    await sunmiyaNFT.mint(userB.address, 1);
     // userA로 민팅
-    await sunmiyaNFT.connect(userA).mint(userB.address, 1);
+    await sunmiyaNFT.connect(userA).mint(userB.address, 2);
 
     const balance = await sunmiyaNFT.balanceOf(userB.address);
-    expect(balance).to.equal(1);
+    expect(balance).to.equal(2);
   });
 
   it('토큰을 pause 할 경우 토큰이 전송되면 안된다.', async function () {
