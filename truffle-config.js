@@ -4,7 +4,7 @@ const privateKey = process.env.PRIVATE_KEY;
 module.exports = {
   networks: {
     // for ganache
-    development: {
+    toshinet: {
       provider: () => {
         return new HDWalletProvider(privateKey, 'http://54.180.113.55:8551');
       },
@@ -19,18 +19,15 @@ module.exports = {
           'https://api.baobab.klaytn.net:8651'
         );
       },
-      network_id: '1001', // Klaytn baobab testnet's network id
+      network_id: '1001', //Klaytn baobab testnet's network id
       gas: '8500000',
       gasPrice: null,
     },
-    mainnet: {
+    cypress: {
       provider: () => {
-        return new HDWalletProvider(
-          privateKey,
-          'https://klaytn-en.sixnetwork.io:8651'
-        );
+        return new HDWalletProvider(privateKey, 'http://your.cypress.en:8551');
       },
-      network_id: '8217', // Klaytn mainnet's network id
+      network_id: '8217', //Klaytn mainnet's network id
       gas: '8500000',
       gasPrice: null,
     },
