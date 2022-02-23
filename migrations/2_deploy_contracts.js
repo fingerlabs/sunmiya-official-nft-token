@@ -1,12 +1,15 @@
 const fs = require('fs-extra');
 const path = require('path');
+const env = require('env-var');
+
+const NETWORK_NAME = env.get('NETWORK_NAME').required().asString();
 
 module.exports = async function (deployer) {
   const SunmiyaNFT = artifacts.require('SunmiyaNFT');
   await deployer.deploy(SunmiyaNFT, 'Toshi NFT', 'TOSHI');
   // await deployer.deploy(SunmiyaNFT, 'Sunmiya', 'MIYA');
 
-  const networkName = process.env.NETWORK_NAME || 'MAINNET';
+  const networkName = NETWORK_NAME;
   const deployPath = path.resolve(__dirname, '../../', networkName);
   const filename = `${SunmiyaNFT.contractName}.json`;
   
