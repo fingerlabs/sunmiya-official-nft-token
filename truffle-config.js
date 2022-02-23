@@ -1,6 +1,8 @@
 const HDWalletProvider = require('truffle-hdwallet-provider-klaytn');
+const env = require('env-var');
 
-const privateKey = process.env.PRIVATE_KEY;
+const privateKey = env.get('PRIVATE_KEY').required().asString();
+
 module.exports = {
   networks: {
     // for ganache
