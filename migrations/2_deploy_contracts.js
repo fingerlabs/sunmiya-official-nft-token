@@ -6,8 +6,8 @@ const NETWORK_NAME = env.get('NETWORK_NAME').required().asString();
 
 module.exports = async function (deployer) {
   const SunmiyaNFT = artifacts.require('SunmiyaNFT');
-  await deployer.deploy(SunmiyaNFT, 'Toshi NFT', 'TOSHI');
-  // await deployer.deploy(SunmiyaNFT, 'Sunmiya', 'MIYA');
+  // await deployer.deploy(SunmiyaNFT, 'Toshi NFT', 'TOSHI');
+  await deployer.deploy(SunmiyaNFT, 'Sunmiya Club Official', 'MIYA');
 
   const networkName = NETWORK_NAME;
   const deployPath = path.resolve(__dirname, '../../', networkName);
